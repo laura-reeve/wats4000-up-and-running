@@ -36,21 +36,21 @@ requirements.
 * Test the site by running `npm run dev` to start the development server.
 * Read through the site code and note the following:
     * What directories do you see? How do you interpret their names?
-    * Where is the Vue app defined? (Which file?)
-    * What is listed in `package.json`?
-    * What do you see in the `build` and `config` directories?
+    * Where is the Vue app defined? (Which file?) --node-modules
+    * What is listed in `package.json`?  information for the package plus dependencies and requirements
+    * What do you see in the `build` and `config` directories? -- build: check versions, dev server & client, conf files; -- config: port and dev server, open auto browser, node env requirements
 * Press `ctrl-c` in the terminal to exit the development server.
 * Run `npm run build --report` and take a look at both the webpage that comes up and the output in the console. Consider the following questions:
-    * What are you looking at in the "build report" that pops up in the web browser?
-    * Can you tell which files are the largest in the project?
-    * Does the custom code of the app (look for the blue box) make up the largest of the filesize? If not, what creates the most bulk in terms of file downloads?
-    * What do you see in the console output? How do you interpret that information?
+    * What are you looking at in the "build report" that pops up in the web browser?  -- looks like components and how big those files are within this package coampritively
+    * Can you tell which files are the largest in the project? -- by far the biggest boxes are vue.esm.js, dist, vue, node_modules
+    * Does the custom code of the app (look for the blue box) make up the largest of the filesize? If not, what creates the most bulk in terms of file downloads? -- oh not even close!  the biggest box by far is the Vue ES module
+    * What do you see in the console output? How do you interpret that information?  -- Ican't tell which files are the ones in teh boxes, but they are much tinier than I thought they would be
     * When you're finished you can exit the build report by typing `ctrl-c` to quit.
 * Look at the directories in your project again and notice that there is a new one called `dist`.
-    * Explore the `dist` directory. What do you see?
-    * Do you see the filenames of the static files? What seems odd about those filenames?
-    * Do you see the contents of your JS and CSS files? What has happened to those contents?
-    * Describe (in words or with a flowchart/diagram) what happens when the `npm run build` command is executed to the best of your ability.
+    * Explore the `dist` directory. What do you see? -- HTML, CSS, and JS files
+    * Do you see the filenames of the static files? What seems odd about those filenames?  -- some of them end in .map
+    * Do you see the contents of your JS and CSS files? What has happened to those contents?  -- Oh they have been compiled
+    * Describe (in words or with a flowchart/diagram) what happens when the `npm run build` command is executed to the best of your ability.  -- it is opening a file list on the local host that decscribes the content of the app and the modules and lists their file names and sizes and compares those sizes to one another via a visual representation in the web browser
 * Make a diagram of the components of this system like the ones shown in the Practical JavaScript 2: Building Applications book. Do your best to document your interpretation of the architecture of this system.
 
 
